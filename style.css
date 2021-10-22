@@ -7,6 +7,10 @@
 }
 
 body{
+    background-color: black;
+    background-image: url(conteudo/desktop.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     height: 100%;
     display: grid;
     place-items: center;
@@ -15,13 +19,16 @@ body{
 }
 
 main {
-    width: 375px;
+    width: 500px;
     height: 812px;
     margin: 0 auto;
     background: url(conteudo/Mobile.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
 }
 
 .maincontainer {
+    width: 500px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -36,7 +43,6 @@ main {
     width: 278px;
     height: 400px;
     margin: 0 auto;
-    margin-top: 120px;
 }
 
 
@@ -81,12 +87,30 @@ p {
     text-align: center;
 }
 
-#socialmedia img{
-    top: 50px;
+#socialmedia {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#socialmedia a img{
     position: relative;
+    top: 20px;
     width: 48px;
     height: 48px;
+    transition: all ease 0.3s;
 }
+
+#socialmedia img:hover{
+    top: -8px;
+    transition: all ease 0.3s;
+    transform: scale(1.1)
+}
+
+#socialmedia img:hover::before{
+    transition: all ease 0.3s;
+}
+
 
 a:hover, a:visited, a:link, a:active
 {
@@ -97,6 +121,108 @@ a:hover, a:visited, a:link, a:active
     transform: rotate(0deg);
 }
 
-/* .maincontainer {
-    
-} */
+#faixa {
+    width: 64px;
+    height: 178px;
+    background: linear-gradient(to bottom right, #FF008E, #FFCD1E);
+    position: absolute;
+    place-self: start center;
+    z-index: 1;
+}
+
+#quebra {
+    width: 80px;
+    height: 8px;
+    background-color: black;
+    position: absolute;
+    place-self: start center;
+    margin-top: 174px;
+}
+
+#dowhile {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#dowhile2 {
+    display: none;
+}
+
+@media(max-width: 4120px){
+    .avatar {
+        margin-top: 150px;
+    }
+
+    main {
+        margin-top: 140px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    #socialmedia a img{
+        width: 60px;
+        height: 60px;
+    }
+
+    #socialmedia {
+        position: relative;
+        margin-top: 100px;
+    }
+}
+
+/* Mobile */
+@media(max-width: 600px){
+    .maincontainer {
+        width: 375px;
+    }
+
+    main{
+        width: 375px;
+        margin: 0 auto;
+    }
+
+    .avatar{
+        margin-top: 120px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    #socialmedia {
+        position: relative;
+        margin-top: 20px;
+    }
+
+    #socialmedia a img{
+        top: 0px;
+        width: 48px;
+        height: 48px;
+    }
+
+    #faixa{
+        display: none;
+    }
+
+    #quebra {
+        display: none;
+    }
+
+    body {
+        background-color: #202024;
+    }
+
+    #dowhile {
+        position: relative;
+        display: none;
+    }
+
+    #dowhile2{
+        display: block;
+        margin: 50px auto 0px auto;
+    }
+
+}
