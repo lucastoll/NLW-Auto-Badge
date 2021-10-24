@@ -1,6 +1,6 @@
 # NLW Auto Badge
 
-https://lucastoll.github.io/NLWOrigin/
+https://lucastoll.github.io/NLW-Auto-Badge/
 
 ## ⬛ O que é
 
