@@ -10,12 +10,36 @@
     setTimeout(rotate, 60);
 
 
-/* let rotation = 0;
-function rotateImg() {
-  rotation += 90; // add 90 degrees, you can change this as you want
-  if (rotation === 360) { 
-    // 360 means rotate back to 0
-    rotation = 0;
-  }
-  document.querySelector("#rocketseat").style.transform = `rotate(${rotation}deg)`;
-} */
+function getGitHubProfileInfo() {
+  user = prompt("Github Username: ")
+  containersocialmedia = document.getElementById("socialmedia");
+
+  if(user=="lucastoll")
+    containersocialmedia.style.display = "block"
+  else
+    containersocialmedia.style.display = "none"
+
+  var url = `https://api.github.com/users/${user}`
+
+  
+  fetch(url)
+    .then(response => { 
+      if (response.ok) {
+        return response.json() 
+      }
+      else //Reinicio caso a api não enconte o usuario
+      {
+        getGitHubProfileInfo()
+      }
+})
+.then(data => {
+  Username.textContent = data.name
+  Userid.textContent = data.login
+  bio.textContent = data.bio
+  ghublink.href = data.html_url
+  profilepic.src = data.avatar_url
+})
+
+}
+
+getGitHubProfileInfo() //Executar pela primeira vez

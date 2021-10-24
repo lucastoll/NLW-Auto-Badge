@@ -27,6 +27,8 @@ main {
     background-repeat: no-repeat; 
 }
 
+/* Caixa do tamanho geral do cracha */
+
 .maincontainer {
     width: 500px;
     display: flex;
@@ -34,6 +36,9 @@ main {
     flex-direction: column;
     align-items: center;
 }
+ 
+
+/* Caixa que contem as informações dentro do cracha */
 
 .avatar{
     display: flex;
@@ -45,22 +50,39 @@ main {
     margin: 0 auto;
 }
 
+/* Div da foto + logo da rocketseat */
 
-.foto img:nth-child(1) { /* Rocketseat logo */
+#foto {
+    position: absolute;
+    margin-bottom: 222px;
+}
+
+
+#rocketseat {
+    transform: rotate(0deg);
     position: absolute;
     z-index: 1;
 }
 
-.foto img:nth-child(2) { /* Foto de perfil */
-    position: relative;
+#profilepic { /* Foto de perfil */
+    position: static;
     width: 160px;
     height: 184px;
     /* object-fit:fill; */    
     clip-path: polygon(50% 0, 100% 26%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
 
+/* Depois da foto */
 
+#afterpic {
+    display: inherit;
+    justify-content: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    margin-top: 150px;
+}
 
+/* Nome + ghub */
 
 h1 {
     position: relative;
@@ -68,7 +90,6 @@ h1 {
     color: var(--grey);
     font-size: 24px;
 }
-
 p {
     color: var(--grey);
     font-size: 14px;
@@ -86,6 +107,8 @@ p {
     top: 50px;
     text-align: center;
 }
+
+/* Redes sociais */
 
 #socialmedia {
     display: flex;
@@ -117,18 +140,18 @@ a:hover, a:visited, a:link, a:active
     text-decoration: none;
 }
 
-#rocketseat {
-    transform: rotate(0deg);
-}
+/* Faixa que segura o cracha */
 
 #faixa {
     width: 64px;
     height: 178px;
-    background: linear-gradient(to bottom right, #FF008E, #FFCD1E);
+    background: linear-gradient(to bottom right, #05d6d9, #f907fc);
     position: absolute;
     place-self: start center;
     z-index: 1;
 }
+
+/* Risco preto  */
 
 #quebra {
     width: 80px;
@@ -139,6 +162,8 @@ a:hover, a:visited, a:link, a:active
     margin-top: 174px;
 }
 
+/* Logo do while apos / antes o body */
+
 #dowhile {
     position: relative;
     margin-top: 20px;
@@ -148,10 +173,12 @@ a:hover, a:visited, a:link, a:active
 #dowhile2 {
     display: none;
 }
+ 
+/* Not mobile */
 
 @media(max-width: 4120px){
     .avatar {
-        margin-top: 150px;
+        margin-top: 200px;
     }
 
     main {
@@ -188,6 +215,10 @@ a:hover, a:visited, a:link, a:active
         margin-top: 120px;
     }
 
+    #foto {
+        margin-top: 140px;
+    }
+    
     p {
         font-size: 14px;
     }
